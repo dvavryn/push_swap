@@ -1,21 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dvavryn <dvavryn@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/13 00:37:04 by dvavryn           #+#    #+#             */
-/*   Updated: 2025/05/13 00:51:08 by dvavryn          ###   ########.fr       */
+/*   Created: 2025/05/13 00:53:32 by dvavryn           #+#    #+#             */
+/*   Updated: 2025/05/13 01:06:49 by dvavryn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+int	*sa(int *a)
+{
+	int	buf;
+	
+	buf = a[0];
+	a[0] = a[1];
+	a[1] = buf;
+	return (a);
+}
 
-#include "libft.h"
+int *sb(int *b)
+{
+	int buf;
 
-int	errorcheck(int argc, char **argv);
-int get_a(int argc, char **argv);
+	buf = b[0];
+	b[0] = b[1];
+	b[1] = buf;
+	return (b);
+}
 
-#endif
+void ss(int **a, int **b)
+{
+	int buf_a;
+	int buf_b;
+
+	buf_a = *a[0];
+	*a[0] = *a[1];
+	*a[1] = buf_a;
+	buf_a = *b[0];
+	*b[0] = *b[1];
+	*b[1] = buf_b;
+}

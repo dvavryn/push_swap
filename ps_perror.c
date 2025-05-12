@@ -1,21 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ps_perror.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dvavryn <dvavryn@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/13 00:37:04 by dvavryn           #+#    #+#             */
-/*   Updated: 2025/05/13 00:51:08 by dvavryn          ###   ########.fr       */
+/*   Created: 2025/05/12 23:29:28 by dvavryn           #+#    #+#             */
+/*   Updated: 2025/05/12 23:34:23 by dvavryn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "push_swap.h"
 
-#include "libft.h"
+int ps_perror()
+{
+	char	*msg;
 
-int	errorcheck(int argc, char **argv);
-int get_a(int argc, char **argv);
-
-#endif
+	msg = "ERROR\n";
+	write(2, msg, ft_strlen(msg));
+	return (2);
+}

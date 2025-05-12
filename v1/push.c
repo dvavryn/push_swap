@@ -1,21 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dvavryn <dvavryn@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/13 00:37:04 by dvavryn           #+#    #+#             */
-/*   Updated: 2025/05/13 00:51:08 by dvavryn          ###   ########.fr       */
+/*   Created: 2025/05/13 00:53:39 by dvavryn           #+#    #+#             */
+/*   Updated: 2025/05/13 00:53:39 by dvavryn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
-
-#include "libft.h"
-
-int	errorcheck(int argc, char **argv);
-int get_a(int argc, char **argv);
-
-#endif
