@@ -6,7 +6,7 @@
 /*   By: dvavryn <dvavryn@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/15 21:59:00 by dvavryn           #+#    #+#             */
-/*   Updated: 2025/05/15 23:05:24 by dvavryn          ###   ########.fr       */
+/*   Updated: 2025/05/15 23:29:55 by dvavryn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ void	help_print(int *a, int *b, size_t size)
 	printf("round #%i\n", i);
 	while (j < size)
 	{
-		// if (a[j] != 0 || b[j] != 0)
-			//printf("%.i %.i\n", a[j], b[j]);
-			printf("%i %i\n", a[j], b[j]);
+		if (a[j] != 0 || b[j] != 0)
+			printf("%.i %.i\n", a[j], b[j]);
+			// printf("%i %i\n", a[j], b[j]);
 		j++;
 	}
 	printf("- -\n");

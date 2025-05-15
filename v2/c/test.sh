@@ -1,6 +1,7 @@
 cc main.c ./srcs/*.c -o test
-./test 2 1 3 6 5 8
-
+# ./test 2 1 3 6 5 8
+# echo next
+./test 2 1 3 5 4 6
 
 # echo "./a.out"
 # ./a.out
