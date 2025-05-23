@@ -1,25 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   error.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dvavryn <dvavryn@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/23 15:39:48 by dvavryn           #+#    #+#             */
-/*   Updated: 2025/05/23 15:41:14 by dvavryn          ###   ########.fr       */
+/*   Created: 2025/05/23 16:47:50 by dvavryn           #+#    #+#             */
+/*   Updated: 2025/05/23 16:48:30 by dvavryn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "push_swap.h"
 
-typedef struct s_list
+int	error(void)
 {
-	void	*last;
-	int		i;
-	void	*next;
-
-}	t_list;
-
-
-#endif
+	ft_printf("ERRROR\n");
+	return (-1);
+}
