@@ -1,4 +1,4 @@
-cc main.c get_args.c error.c free_arr.c step_1.c step_2.c ../libft/libft.a -o push_swap
+cc main.c get_args.c error.c free_arr.c step_1.c step_2.c tmp_print.c ../libft/libft.a -o push_swap
 
 echo -ne "  1\t "
 ./push_swap 1 3 5 +9 20 -4 50 60 04 08
