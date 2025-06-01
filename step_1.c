@@ -6,7 +6,7 @@
 /*   By: dvavryn <dvavryn@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/01 22:39:59 by dvavryn           #+#    #+#             */
-/*   Updated: 2025/06/01 22:40:05 by dvavryn          ###   ########.fr       */
+/*   Updated: 2025/06/01 22:56:55 by dvavryn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ int	*step_one(int argc, char **argv, size_t *size)
 		exit(5);
 	}
 	*size = get_size(args);
+	ft_free_arr(argc, args);
 	return (a);
 }
 
