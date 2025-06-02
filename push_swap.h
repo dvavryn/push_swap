@@ -6,7 +6,7 @@
 /*   By: dvavryn <dvavryn@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/01 13:07:32 by dvavryn           #+#    #+#             */
-/*   Updated: 2025/06/02 00:52:05 by dvavryn          ###   ########.fr       */
+/*   Updated: 2025/06/02 20:27:25 by dvavryn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,11 @@ int		*step_one(int argc, char **argv, size_t *size);
 int		*get_a(char **argv);
 size_t	get_size(char **arr);
 void	step_two(int *a, size_t	size);
-void	algo(t_data	*stacks);
 
 //tmp
 void	tmp_print_tab(int *tab, size_t	size);
 void	tmp_print_arr(char **args);
+void	tmp_print_data(t_data stacks);
 
 void	sa(t_data *stacks);
 void	sb(t_data *stacks);
