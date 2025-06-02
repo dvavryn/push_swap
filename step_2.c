@@ -6,7 +6,7 @@
 /*   By: dvavryn <dvavryn@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/01 22:52:44 by dvavryn           #+#    #+#             */
-/*   Updated: 2025/06/02 22:57:40 by dvavryn          ###   ########.fr       */
+/*   Updated: 2025/06/03 00:42:31 by dvavryn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,31 @@ void	step_two(int *a, size_t size)
 }
 
 void fix(t_data *stacks);
+
+void algo_1(t_data *stacks)
+{
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 void	algo(t_data	*stacks)
 {
