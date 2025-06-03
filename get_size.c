@@ -1,30 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   step_2.c                                           :+:      :+:    :+:   */
+/*   get_size.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dvavryn <dvavryn@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/01 22:52:44 by dvavryn           #+#    #+#             */
-/*   Updated: 2025/06/03 12:49:48 by dvavryn          ###   ########.fr       */
+/*   Created: 2025/06/03 13:28:37 by dvavryn           #+#    #+#             */
+/*   Updated: 2025/06/03 13:28:51 by dvavryn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	step_two(int *a, size_t size)
+size_t	get_size(char **arr)
 {
-	t_data	stacks;
+	size_t	i;
 
-	stacks.a = a;
-	stacks.b = ft_calloc(size, sizeof(int));
-	if (!stacks.b)
-	{
-		free(a);
-		exit(6);
-	}
-	stacks.sa = size;
-	stacks.sb = 0;
-	solve(&stacks);
-	free(stacks.b);
+	i = 0;
+	while (arr[i])
+		i++;
+	return (i);
 }

@@ -1,30 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   step_2.c                                           :+:      :+:    :+:   */
+/*   errorcheck_minmax.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dvavryn <dvavryn@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/01 22:52:44 by dvavryn           #+#    #+#             */
-/*   Updated: 2025/06/03 12:49:48 by dvavryn          ###   ########.fr       */
+/*   Created: 2025/06/03 13:25:51 by dvavryn           #+#    #+#             */
+/*   Updated: 2025/06/03 13:25:59 by dvavryn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	step_two(int *a, size_t size)
+void	errorcheck_minmax(int argc, char **argv)
 {
-	t_data	stacks;
+	size_t	i;
+	long	tmp;
 
-	stacks.a = a;
-	stacks.b = ft_calloc(size, sizeof(int));
-	if (!stacks.b)
+	i = 0;
+	while (argv[i])
 	{
-		free(a);
-		exit(6);
+		tmp = ft_atol(argv[i]);
+		if (tmp < INT_MIN || tmp > INT_MAX)
+		{
+			ft_free_arr(argc, argv);
+			ft_printf("ERROR\n");
+			exit(4);
+		}
+		i++;
 	}
-	stacks.sa = size;
-	stacks.sb = 0;
-	solve(&stacks);
-	free(stacks.b);
 }

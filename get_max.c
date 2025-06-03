@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   step_2.c                                           :+:      :+:    :+:   */
+/*   get_max.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dvavryn <dvavryn@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/01 22:52:44 by dvavryn           #+#    #+#             */
-/*   Updated: 2025/06/03 12:49:48 by dvavryn          ###   ########.fr       */
+/*   Created: 2025/06/03 13:27:09 by dvavryn           #+#    #+#             */
+/*   Updated: 2025/06/03 15:13:45 by dvavryn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	step_two(int *a, size_t size)
+int	get_max(t_data *stacks)
 {
-	t_data	stacks;
+	int		max;
+	size_t	i;
 
-	stacks.a = a;
-	stacks.b = ft_calloc(size, sizeof(int));
-	if (!stacks.b)
+	max = -2147483648;
+	i = 0;
+	while (i < stacks->sa)
 	{
-		free(a);
-		exit(6);
+		if (stacks->a[i] > max)
+			max = stacks->a[i];
+		i++;
 	}
-	stacks.sa = size;
-	stacks.sb = 0;
-	solve(&stacks);
-	free(stacks.b);
+	return (max);
 }

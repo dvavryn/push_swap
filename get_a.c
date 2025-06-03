@@ -1,30 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   step_2.c                                           :+:      :+:    :+:   */
+/*   get_a.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dvavryn <dvavryn@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/01 22:52:44 by dvavryn           #+#    #+#             */
-/*   Updated: 2025/06/03 12:49:48 by dvavryn          ###   ########.fr       */
+/*   Created: 2025/06/03 13:28:21 by dvavryn           #+#    #+#             */
+/*   Updated: 2025/06/03 13:28:27 by dvavryn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	step_two(int *a, size_t size)
+int	*get_a(char **args)
 {
-	t_data	stacks;
+	int		*out;
+	size_t	i;
 
-	stacks.a = a;
-	stacks.b = ft_calloc(size, sizeof(int));
-	if (!stacks.b)
+	i = get_size(args);
+	out = ft_calloc(i, sizeof(int));
+	if (!out)
+		return (NULL);
+	i = 0;
+	while (args[i] != NULL)
 	{
-		free(a);
-		exit(6);
+		out[i] = ft_atoi(args[i]);
+		i++;
 	}
-	stacks.sa = size;
-	stacks.sb = 0;
-	solve(&stacks);
-	free(stacks.b);
+	return (out);
 }
