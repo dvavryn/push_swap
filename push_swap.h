@@ -6,7 +6,7 @@
 /*   By: dvavryn <dvavryn@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/01 13:07:32 by dvavryn           #+#    #+#             */
-/*   Updated: 2025/06/03 15:52:17 by dvavryn          ###   ########.fr       */
+/*   Updated: 2025/06/03 22:49:08 by dvavryn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	ft_free_arr(int argc, char **argv);
 int		*step_one(int argc, char **argv, size_t *size);
 void	step_two(int *a, size_t size);
 void	fix_three(t_data *stacks);
-void	algo(t_data	*stacks);
+void	algo(t_data	*s);
 char	**get_args(int argc, char **argv);
 void	errorcheck(int argc, char **argv);
 int		*get_a(char **args);

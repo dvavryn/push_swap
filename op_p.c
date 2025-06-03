@@ -6,7 +6,7 @@
 /*   By: dvavryn <dvavryn@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/03 13:20:33 by dvavryn           #+#    #+#             */
-/*   Updated: 2025/06/03 13:20:40 by dvavryn          ###   ########.fr       */
+/*   Updated: 2025/06/03 22:21:24 by dvavryn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,11 @@ void	pa(t_data *stack)
 
 	if (stack->sb == 0)
 		return ;
-	if (stack->sa != 0)
+	i = stack->sa;
+	while (i > 0)
 	{
-		i = stack->sa;
-		while (i > 0)
-		{
-			stack->a[i] = stack->a[i - 1];
-			i--;
-		}
+		stack->a[i] = stack->a[i - 1];
+		i--;
 	}
 	stack->a[0] = stack->b[0];
 	i = 0;
@@ -46,14 +43,11 @@ void	pb(t_data *stack)
 
 	if (stack->sa == 0)
 		return ;
-	if (stack->sb != 0)
+	i = stack->sb;
+	while (i > 0)
 	{
-		i = stack->sb;
-		while (i > 0)
-		{
-			stack->b[i] = stack->b[i - 1];
-			i--;
-		}
+		stack->b[i] = stack->b[i - 1];
+		i--;
 	}
 	stack->b[0] = stack->a[0];
 	i = 0;
