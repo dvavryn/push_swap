@@ -6,28 +6,186 @@
 /*   By: dvavryn <dvavryn@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/03 12:48:10 by dvavryn           #+#    #+#             */
-/*   Updated: 2025/06/03 23:46:29 by dvavryn          ###   ########.fr       */
+/*   Updated: 2025/06/04 23:05:41 by dvavryn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include "tmp_print.c"
+
+int	getmax(char c, t_data *stacks);
+int	getmin(char c, t_data *stacks);
+void	get_pushcosta(t_data *stacks);
+void	get_pushcosta(t_data *stacks);
 
 void	algo(t_data *stacks)
 {
-	int dividor;
+	tmp_print_data(*stacks);
+	pb(stacks);
+	pb(stacks);
+	get_pushcosta(stacks);
+	// printf("\n\nmina:%i\nmaxa:%i\n", getmin('a',stacks), getmax('a', stacks));
+	// printf("\n\nminb:%i\nmaxb:%i\n", getmin('b',stacks), getmax('b', stacks));
+	tmp_print_data(*stacks);
+}
 
-	dividor = 2;
-	while (stacks->sa != 0 && dividor < 2147483647)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+void	get_pushcosta(t_data *stacks)
+{
+	size_t	i;
+	size_t	j;
+	
+	i = 0;
+	j = 1;
+	while (i < stacks->sa)
 	{
-		if (stacks->a[0] % dividor == 1)
-			pb(stacks);
+		if (i <= stacks->sa / 2)
+		{
+			stacks->pca[i] = j;
+			j++;
+		}
 		else
 		{
-			ra(stacks);
+			stacks->pca[i] = j - 1;
+			j--;
 		}
-		dividor *= 2;
+		i++;
 	}
 }
+
+void	get_pushcostb(t_data *stacks)
+{
+	size_t	i;
+	size_t	j;
+	int		pc;
+	
+	i = 0;
+	while (i < stacks->sa)
+	{
+		j = 1;	
+		while (j < stacks->sb - 1)
+		{
+			if (stacks->a[i] > stacks->b[j + 1] && stacks->a[i] < stacks->b[j])
+				stacks->pcb[i] = j;
+			j++;
+		}
+		i++;
+	}
+}
+
+int	getmax(char c, t_data *stacks)
+{
+	size_t	i;
+	int max;
+	
+	max = 0;
+	i = 0;
+	if (c == 'a')
+	{
+		max = stacks->a[0];
+		while(i < stacks->sa)
+		{
+			if (max < stacks->a[i])
+				max = stacks->a[i];
+			i++;
+		}
+	}
+	else if (c == 'b')
+	{
+		max = stacks->b[0];
+		while(i < stacks->b[0])
+		{
+			if (max < stacks->b[i])
+				max = stacks->b[i];
+			i++;
+		}
+	}
+	return (max);
+}
+
+int	getmin(char c, t_data *stacks)
+{
+	size_t	i;
+	int min;
+	
+	min = 0;
+	i = 0;
+	if (c == 'a')
+	{
+		min = stacks->a[0];
+		while(i < stacks->sa)
+		{
+			if (min > stacks->a[i])
+				min = stacks->a[i];
+			i++;
+		}
+	}
+	else if (c == 'b')
+	{
+		min = stacks->b[0];
+		while(i < stacks->sb)
+		{
+			if (min > stacks->b[i])
+				min = stacks->b[i];
+			i++;
+		}
+	}
+	return (min);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // int	get_maxb(t_data *stacks);
 // // 

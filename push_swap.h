@@ -6,7 +6,7 @@
 /*   By: dvavryn <dvavryn@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/01 13:07:32 by dvavryn           #+#    #+#             */
-/*   Updated: 2025/06/03 22:49:08 by dvavryn          ###   ########.fr       */
+/*   Updated: 2025/06/04 22:39:26 by dvavryn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ typedef struct s_data
 	int		*b;
 	size_t	sa;
 	size_t	sb;
+	int		*pca;
+	int		*pcb;
 }		t_data;
 void	sa(t_data *stack);
 void	sb(t_data *stack);
@@ -35,6 +37,12 @@ void	rr(t_data *stack);
 void	rra(t_data *stack);
 void	rrb(t_data *stack);
 void	rrr(t_data *stack);
+
+void	swap_pc(t_data *stacks);
+void	push_pc (t_data *stacks);
+void	rot_pc(t_data *stacks);
+void	rrot_pc(t_data *stacks);
+
 int		get_min(t_data *stacks);
 int		get_max(t_data *stacks);
 int		is_n_sorted(t_data *stacks);
