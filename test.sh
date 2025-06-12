@@ -1,7 +1,31 @@
-cc main.c algo.c error.c errorcheck_char.c errorcheck_double.c errorcheck_minmax.c fix_three.c ft_free_arr.c get_a.c get_args.c get_max.c get_min.c get_pos.c get_size.c is_n_sorted.c op_p.c op_r.c op_rr.c op_s.c solve.c step_1.c step_2.c ../libft/libft.a -o push_swap
+cc main.c utils1.c utils2.c utils3.c ../libft/libft.a -o push_swap
 echo "Runnung test.sh"
 
-./push_swap 5 2 7 1 6 3 9 4 8
+# ./push_swap 5 2 7 1 6 3 9 4 8
+
+echo "working input"
+./push_swap 1 3 5 +9 20 -4 50 60 04 08
+./push_swap "3 4 6 8 9 74 -56 +495"
+./push_swap "95 99 -9 10 9"
+./push_swap 2147483647 2 4 7
+./push_swap 99 -2147483648 23 545
+./push_swap "2147483647 843 56544 24394"
+echo "-------------"
+
+echo "ERROR input"
+./push_swap 1 3 dog 35 80 -3
+./push_swap a
+./push_swap 1 2 3 5 67b778 947
+./push_swap " 12 4 6 8 54fhd 4354"
+./push_swap 1 --    45 32
+./push_swap 1 3 58 9 3
+./push_swap 3 03
+./push_swap " 49 128     50 38   49"
+./push_swap 54867543867438 3
+./push_swap -2147483647765 4 5
+./push_swap "214748364748385 28 47 29"
+./push_swap "1 2 4 3" 76 90 "348 05"
+
 
 
 # echo "Tests 2 and 3 digits"
@@ -39,28 +63,7 @@ echo "Runnung test.sh"
 # ARG="3 0 2"; ./push_swap $ARG | ./checker $ARG 
 # ARG="3 2 0"; ./push_swap $ARG | ./checker $ARG 
 
-# echo "working input"
-# ./push_swap 1 3 5 +9 20 -4 50 60 04 08
-# ./push_swap "3 4 6 8 9 74 -56 +495"
-# ./push_swap "95 99 -9 10 9"
-# ./push_swap 2147483647 2 4 7
-# ./push_swap 99 -2147483648 23 545
-# ./push_swap "2147483647 843 56544 24394"
-# echo "-------------"
 
-# echo "ERROR input"
-# ./push_swap 1 3 dog 35 80 -3
-# ./push_swap a
-# ./push_swap 1 2 3 5 67b778 947
-# ./push_swap " 12 4 6 8 54fhd 4354"
-# ./push_swap 1 --    45 32
-# ./push_swap 1 3 58 9 3
-# ./push_swap 3 03
-# ./push_swap " 49 128     50 38   49"
-# ./push_swap 54867543867438 3
-# ./push_swap -2147483647765 4 5
-# ./push_swap "214748364748385 28 47 29"
-# ./push_swap "1 2 4 3" 76 90 "348 05"
 
 # echo "BENCHMARK 100"
 # arg="199093 388542 20901 136104 558244 922696 878867 759645 859431 381388 592781 655633 65711 109254 937971 56635 105012 737368 -25942 509193 861867 323488 73952 662903 682270 385824 437247 337175 996392 490935 -14950 738679 219682 584830 618319 -36220 705242 760845 266240 584392 74325 143250 -71329 806660 594991 126637 599863 828900 59114 39584 828105 -67268 812570 869648 820627 547981 390905 153374 12121 199297 402870 56859 257862 505957 -55803 237460 248298 -95756 36322 294399 329199 539667 -81162 104841 585247 699711 290219 954252 69390 925295 647007 326560 -36910 443363 531178 584770 194148 493980 -95356 988321 764640 360179 912930 788016 148605 -21514 70540 819532 933676 854759";./push_swap $arg | ./checker_MAC $arg; echo "In :";./push_swap $arg | wc -l
