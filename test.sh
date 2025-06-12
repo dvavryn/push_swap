@@ -1,18 +1,26 @@
-cc main.c utils1.c utils2.c utils3.c ../libft/libft.a -o push_swap
-echo "Runnung test.sh"
+cc \
+main.c \
+error.c \
+free.c \
+ps_split.c \
+../libft/libft.a \
+-o push_swap
 
+
+echo "Runnung test.sh"
+echo
 # ./push_swap 5 2 7 1 6 3 9 4 8
 
-echo "working input"
+echo "----working input----"
 ./push_swap 1 3 5 +9 20 -4 50 60 04 08
 ./push_swap "3 4 6 8 9 74 -56 +495"
 ./push_swap "95 99 -9 10 9"
 ./push_swap 2147483647 2 4 7
 ./push_swap 99 -2147483648 23 545
 ./push_swap "2147483647 843 56544 24394"
-echo "-------------"
-
-echo "ERROR input"
+echo
+echo "----not working input----"
+./push_swap
 ./push_swap 1 3 dog 35 80 -3
 ./push_swap a
 ./push_swap 1 2 3 5 67b778 947
