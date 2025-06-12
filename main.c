@@ -6,7 +6,7 @@
 /*   By: dvavryn <dvavryn@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/12 14:21:23 by dvavryn           #+#    #+#             */
-/*   Updated: 2025/06/13 01:52:10 by dvavryn          ###   ########.fr       */
+/*   Updated: 2025/06/13 01:53:14 by dvavryn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,8 +77,6 @@ t_data	*convert(int argc, char **arr)
 	}
 	if (argc == 2)
 		free_arr(arr);
-	free_data(&out);
-	return (NULL);
 	return (out);
 }
 
@@ -145,18 +143,10 @@ int	main(int argc, char **argv)
 	t_data	*a;
 
 	a = get_stack(argc, argv);
-	if (!a)
-		return (1);
 	// if (!issorted(a))
 		sort(&a);
 	free_data(&a);
-	
-	while(a)
-	{
-		a = a->next;
-		free(a->prev);
-	}
-	free(a);
+
 	return (0);
 }
 
