@@ -4,7 +4,8 @@ error.c \
 free.c \
 ps_split.c \
 ../libft/libft.a \
--o push_swap
+-o push_swap \
+-g
 
 
 echo "Runnung test.sh"
