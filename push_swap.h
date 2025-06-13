@@ -6,7 +6,7 @@
 /*   By: dvavryn <dvavryn@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/12 13:26:05 by dvavryn           #+#    #+#             */
-/*   Updated: 2025/06/13 00:39:53 by dvavryn          ###   ########.fr       */
+/*   Updated: 2025/06/13 15:15:28 by dvavryn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdlib.h>
 # include "../libft/libft.h"
 # include <limits.h>
+# include <stdbool.h>
 
 typedef struct s_data
 {

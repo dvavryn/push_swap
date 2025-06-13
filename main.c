@@ -6,12 +6,11 @@
 /*   By: dvavryn <dvavryn@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/12 14:21:23 by dvavryn           #+#    #+#             */
-/*   Updated: 2025/06/13 01:53:14 by dvavryn          ###   ########.fr       */
+/*   Updated: 2025/06/13 15:25:40 by dvavryn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
 //todo ?????????????????
 void	init_stack(t_data **head, char *s)
@@ -29,6 +28,7 @@ void	init_stack(t_data **head, char *s)
 	*head = node;
 }
 
+// DONE!!!
 void	append(t_data **ptr, char *s)
 {
 	t_data		*node;
@@ -49,18 +49,24 @@ void	append(t_data **ptr, char *s)
 	i++;
 }
 
-//todo
-void	free_data(t_data **top)
+// DONE!!!
+void	free_data(t_data *top)
 {
-	return ;
+	while (top->next)
+	{
+		top = top->next;
+		free(top->prev);
+	}
+	free(top);
 }
 
-//todo --working on 
+// DONE!!!
 t_data	*convert(int argc, char **arr)
 {
 	t_data	*out;
 	t_data	*ptr;
 	size_t	i;
+	bool	fail;
 
 	init_stack(&out, arr[0]);
 	if (out == NULL)
@@ -71,12 +77,13 @@ t_data	*convert(int argc, char **arr)
 	{
 		append(&ptr, arr[i]);
 		if (ptr == NULL)
-			exit (1);
-			// return (free_data(&out), error_exit(), NULL);
+			fail = true;
 		i++;
 	}
 	if (argc == 2)
 		free_arr(arr);
+	if (fail)
+		return (free_data(out), error_exit(), NULL);
 	return (out);
 }
 
@@ -113,10 +120,20 @@ int	issorted(t_data *a)
 }
 
 // todo ???????????????????????????????
-void	sort(t_data **a)
+void	sort(t_data *a)
 {
-	t_data *cur = *a;
+	t_data *cur = a;
 
+	// sa(a);	// todo -working on
+	// sb(a);	// todo
+	// pb(a);	// todo
+	// pa(a);	// todo
+	// ra(a);	// todo
+	// rb(a);	// todo
+	// rr(a);	// todo
+	// rra(a);	// todo
+	// rrb(a);	// todo
+	// rrr(a);	// todo
 	while (cur)
 	{
 		ft_printf("%i: %i\n", cur->index, cur->value);
@@ -125,41 +142,13 @@ void	sort(t_data **a)
 	return ;
 }
 
-//todo -- ready?
-void	free_stack(t_data **a)
-{
-	if (!*a)
-		return ;
-	while (*a)
-	{
-		*a = (*a)->next;
-		free((*a)->prev);
-	}
-	free(*a);
-}
-
 int	main(int argc, char **argv)
 {
 	t_data	*a;
 
 	a = get_stack(argc, argv);
-	// if (!issorted(a))
-		sort(&a);
-	free_data(&a);
-
+	if (!issorted(a))
+		sort(a);
+	free_data(a);
 	return (0);
 }
-
-// main to test shit
-// int main(void)
-// {
-// 	char *s = "hello world i am a string";
-// 	char **arr = ft_split(s, ' ');
-// 	if (!arr)
-// 		return (1);
-// 	for(int i = 0; arr[i]; i++)
-// 	{
-// 		ft_printf("%s\n", arr[i]);
-// 	}
-// 	free_arr(arr);
-// }
