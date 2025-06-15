@@ -4,6 +4,7 @@ error.c \
 free.c \
 operations.c \
 get_stack.c \
+ex_op.c \
 ../libft/libft.a \
 -o push_swap \
 -g

@@ -6,7 +6,7 @@
 /*   By: dvavryn <dvavryn@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/12 13:26:05 by dvavryn           #+#    #+#             */
-/*   Updated: 2025/06/15 14:48:54 by dvavryn          ###   ########.fr       */
+/*   Updated: 2025/06/15 15:28:00 by dvavryn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,12 @@ void	swap(t_data **stack);
 void	push(t_data **stack_a, t_data **stack_b);
 void	rotate(t_data **stack);
 void	revrotate(t_data **stack);
+
+// Operations + print
+void	swap_(char c, t_data **stack_a, t_data **stack_b);
+void	push_(char c, t_data **stack_a, t_data **stack_b);
+void	rotate_(char c, t_data **stack_a, t_data **stack_b);
+void	rrotate_(char c, t_data **stack_a, t_data **stack_b);
 
 
 
