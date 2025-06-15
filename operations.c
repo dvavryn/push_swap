@@ -6,7 +6,7 @@
 /*   By: dvavryn <dvavryn@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/15 14:23:12 by dvavryn           #+#    #+#             */
-/*   Updated: 2025/06/15 23:03:41 by dvavryn          ###   ########.fr       */
+/*   Updated: 2025/06/15 23:30:04 by dvavryn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,19 +97,4 @@ static void	isolate_node(t_data **buf)
 	ptr = *buf;
 	ptr->prev = NULL;
 	ptr->next = NULL;
-}
-
-
-
-
-
-
-swap(int *a)
-{
-	int buf;
-
-	if (a[0] && a[1]);
-	buf = a[0];
-	a[0] = a[1];
-	a[1] = buf;
 }

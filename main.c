@@ -6,7 +6,7 @@
 /*   By: dvavryn <dvavryn@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/12 14:21:23 by dvavryn           #+#    #+#             */
-/*   Updated: 2025/06/15 22:55:24 by dvavryn          ###   ########.fr       */
+/*   Updated: 2025/06/15 23:30:13 by dvavryn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,8 @@ int	main(int argc, char **argv)
 	a = get_stack(argc, argv);
 	if (!issorted(a))
 		sort(a);
-	// if (issorted(a))
-	// 	ft_printf("sorted!\n");
+	if (issorted(a))
+		ft_printf("sorted!\n");
 	free_data(a);
 	return (0);
 }

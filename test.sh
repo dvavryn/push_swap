@@ -5,6 +5,7 @@ free.c \
 operations.c \
 get_stack.c \
 ex_op.c \
+print.c \
 sort.c \
 ../libft/libft.a \
 -o push_swap \
@@ -13,7 +14,7 @@ sort.c \
 echo "Runnung test.sh"
 echo
 
-# ./push_swap 5 2 7 1 6 3 9 4 8
+./push_swap 5 2 7 1 6 3 9 4 8
 
 # echo "----working input----"
 # ./push_swap 1 3 5 +9 20 -4 50 60 04 08
@@ -65,15 +66,15 @@ echo
 # echo -e "8:\t"
 # ./push_swap "3 2 1"
 
-echo "Check 3 inputs"
-ARG="0 2"; ./push_swap $ARG | ./checker $ARG
-ARG="2 0"; ./push_swap $ARG | ./checker $ARG
-ARG="0 2 3"; ./push_swap $ARG | ./checker $ARG
-ARG="0 3 2"; ./push_swap $ARG | ./checker $ARG
-ARG="2 0 3"; ./push_swap $ARG | ./checker $ARG
-ARG="2 3 0"; ./push_swap $ARG | ./checker $ARG
-ARG="3 0 2"; ./push_swap $ARG | ./checker $ARG
-ARG="3 2 0"; ./push_swap $ARG | ./checker $ARG
+# echo "Check 3 inputs"
+# ARG="0 2"; ./push_swap $ARG | ./checker $ARG
+# ARG="2 0"; ./push_swap $ARG | ./checker $ARG
+# ARG="0 2 3"; ./push_swap $ARG | ./checker $ARG
+# ARG="0 3 2"; ./push_swap $ARG | ./checker $ARG
+# ARG="2 0 3"; ./push_swap $ARG | ./checker $ARG
+# ARG="2 3 0"; ./push_swap $ARG | ./checker $ARG
+# ARG="3 0 2"; ./push_swap $ARG | ./checker $ARG
+# ARG="3 2 0"; ./push_swap $ARG | ./checker $ARG
 
 
 
