@@ -6,7 +6,7 @@
 /*   By: dvavryn <dvavryn@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/15 22:02:09 by dvavryn           #+#    #+#             */
-/*   Updated: 2025/06/15 23:35:19 by dvavryn          ###   ########.fr       */
+/*   Updated: 2025/06/15 23:36:37 by dvavryn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,8 @@ void	sort(t_data *a)
 	if (get_size(a) <= 3)
 		hardcode_sort(&a);
 	b = NULL;
+	push_('b', &a, &b);
+	push_('b', &a, &b);
 	print_data(a, b);
 	return ;
 }

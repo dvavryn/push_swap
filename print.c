@@ -9,14 +9,14 @@ void	print_data(t_data *a, t_data *b)
 	curb = b;
 	while (cura)
 	{
-		// ft_printf("A: %i\n", cura->value);
-		ft_printf("%i ", cura->value);
+		ft_printf("A: %i\n", cura->value);
+		// ft_printf("%i ", cura->value);
 		cura = cura->next;
 	}
 	ft_printf("\n");
-	// while (curb)
-	// {
-	// 	ft_printf("B: %i\n", curb->value);
-	// 	curb = curb->next;
-	// }
+	while (curb)
+	{
+		ft_printf("B: %i\n", curb->value);
+		curb = curb->next;
+	}
 }
