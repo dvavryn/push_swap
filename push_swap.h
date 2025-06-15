@@ -6,7 +6,7 @@
 /*   By: dvavryn <dvavryn@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/12 13:26:05 by dvavryn           #+#    #+#             */
-/*   Updated: 2025/06/15 15:28:00 by dvavryn          ###   ########.fr       */
+/*   Updated: 2025/06/15 22:03:59 by dvavryn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,10 @@ void	free_data(t_data *top);
 
 // DEVELOPING
 int		issorted(t_data *a);
+void	print_data(t_data *a, t_data *b);
 
+// SORTING
+void	sort(t_data *a);
 
 // Stack initialization
 t_data	*get_stack(int argc, char **argv);

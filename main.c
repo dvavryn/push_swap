@@ -6,56 +6,26 @@
 /*   By: dvavryn <dvavryn@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/12 14:21:23 by dvavryn           #+#    #+#             */
-/*   Updated: 2025/06/15 15:32:28 by dvavryn          ###   ########.fr       */
+/*   Updated: 2025/06/15 22:55:24 by dvavryn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	print_data(t_data *a, t_data *b)
+int	get_min(t_data *stack)
 {
-	t_data *cura;
-	t_data *curb;
+	int		min;
+	t_data	*ptr;
 
-	cura = a;
-	curb = b;
-	ft_printf("\n");
-
-	while (cura)
+	ptr = stack;
+	min = ptr->value;
+	while (ptr->next)
 	{
-		ft_printf("%i: %i\n", cura->index, cura->value);
-		cura = cura->next;
+		if (ptr->next->value < min)
+			min = ptr->next->value;
+		ptr = ptr->next;
 	}
-	ft_printf("\n");
-	while (curb)
-	{
-		ft_printf("%i: %i\n", curb->index, curb->value);
-		curb = curb->next;
-	}
-	ft_printf("----------------\n");
-}
-
-void	sort(t_data *a)
-{
-	t_data *b;
-	
-	b = NULL;
-
-	print_data(a, b);
-	swap_('a', &a, &b);
-	swap_('b', &a, &b);
-	swap_('s', &a, &b);
-	push_('a', &a, &b);
-	push_('b', &a, &b);
-	rotate_('a', &a, &b);
-	rotate_('b', &a, &b);
-	rotate_('s', &a, &b);
-	rrotate_('a', &a, &b);
-	rrotate_('b', &a, &b);
-	rrotate_('r', &a, &b);
-	
-	print_data(a, b);
-	return ;
+	return (min);
 }
 
 int	main(int argc, char **argv)
@@ -65,6 +35,8 @@ int	main(int argc, char **argv)
 	a = get_stack(argc, argv);
 	if (!issorted(a))
 		sort(a);
+	// if (issorted(a))
+	// 	ft_printf("sorted!\n");
 	free_data(a);
 	return (0);
 }
@@ -76,7 +48,7 @@ int	issorted(t_data *a)
 	if (!a)
 		return (0);
 	curr = a;
-	while (curr)
+	while (curr->next)
 	{
 		if (curr->value > curr->next->value)
 			return (0);
