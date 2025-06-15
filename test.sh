@@ -2,20 +2,16 @@ cc \
 main.c \
 error.c \
 free.c \
-ps_split.c \
+operations.c \
+get_stack.c \
 ../libft/libft.a \
 -o push_swap \
 -g
 
-cc op_swap.c -g
-
-
 echo "Runnung test.sh"
 echo
-./a.out
 
-
-# ./push_swap 5 2 7 1 6 3 9 4 8
+./push_swap 5 2 7 1 6 3 9 4 8
 
 # echo "----working input----"
 # ./push_swap 1 3 5 +9 20 -4 50 60 04 08

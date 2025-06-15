@@ -1,0 +1,173 @@
+// RRA
+// int main(void)
+// {
+// 	t_data *a;
+
+// 	a = malloc(sizeof(t_data));
+// 	a->prev = NULL;
+// 	a->val = 50;
+// 	a->index = 0;
+// 	a->next = malloc(sizeof(t_data));
+// 	a->next->prev = a;
+// 	a->next->val = 700;
+// 	a->next->index = 1;
+// 	a->next->next = malloc(sizeof(t_data));
+// 	a->next->next->prev = a->next;
+// 	a->next->next->val = 25;
+// 	a->next->next->index = 2;
+// 	a->next->next->next = NULL;
+
+// 	t_data *cur;
+
+// 	cur = a;
+// 	while (cur)
+// 	{
+// 		printf("%i:\nprev:\t%p\ncur:\t%p\nnext:\t%p\n", cur->index, cur->prev, cur, cur->next);
+// 		cur = cur->next;
+// 	}
+// 	rra(&a);
+// 	printf("\n");
+// 	cur = a;
+// 	while (cur)
+// 	{
+// 		printf("%i:\nprev:\t%p\ncur:\t%p\nnext:\t%p\n", cur->index, cur->prev, cur, cur->next);
+// 		cur = cur->next;
+// 	}
+
+// }
+
+
+//RA
+// int main(void)
+// {
+// 	t_data *a;
+
+// 	a = malloc(sizeof(t_data));
+// 	a->prev = NULL;
+// 	a->val = 50;
+// 	a->index = 0;
+// 	a->next = malloc(sizeof(t_data));
+// 	a->next->prev = a;
+// 	a->next->val = 700;
+// 	a->next->index = 1;
+// 	a->next->next = malloc(sizeof(t_data));
+// 	a->next->next->prev = a->next;
+// 	a->next->next->val = 25;
+// 	a->next->next->index = 2;
+// 	a->next->next->next = NULL;
+
+// 	t_data *cur;
+
+// 	cur = a;
+// 	while (cur)
+// 	{
+// 		printf("%i:\nprev:\t%p\ncur:\t%p\nnext:\t%p\n", cur->index, cur->prev, cur, cur->next);
+// 		cur = cur->next;
+// 	}
+// 	ra(&a);
+// 	cur = a;
+// 	while (cur)
+// 	{
+// 		printf("%i:\nprev:\t%p\ncur:\t%p\nnext:\t%p\n", cur->index, cur->prev, cur, cur->next);
+// 		cur = cur->next;
+// 	}
+
+// }
+
+
+//SA
+// int main(void)
+// {
+// 	t_data *a;
+
+// 	a = malloc(sizeof(t_data));
+// 	a->prev = NULL;
+// 	a->val = 50;
+// 	a->index = 0;
+// 	// a->next = NULL;
+// 	a->next = malloc(sizeof(t_data));
+// 	a->next->prev = a;
+// 	a->next->val = 700;
+// 	a->next->index = 1;
+// 	a->next->next = NULL;
+// 	a->next->next = malloc(sizeof(t_data));
+// 	a->next->next->prev = a->next;
+// 	a->next->next->val = 25;
+// 	a->next->next->index = 2;
+// 	a->next->next->next = NULL;
+
+// 	t_data *cur;
+
+// 	cur = a;
+// 	while (cur)
+// 	{
+// 		printf("%i:\nprev:\t%p\ncur:\t%p\nnext:\t%p\n", cur->index, cur->prev, cur, cur->next);
+// 		cur = cur->next;
+// 	}
+// 	sa(&a);
+// 	printf("\nsa\n\n");
+// 	cur = a;
+// 	while (cur)
+// 	{
+// 		printf("%i:\nprev:\t%p\ncur:\t%p\nnext:\t%p\n", cur->index, cur->prev, cur, cur->next);
+// 		cur = cur->next;
+// 	}
+
+// }
+
+//PB
+int main(void)
+{
+	t_data	*a;
+	t_data	*b;
+
+	b = NULL;
+	a = malloc(sizeof(t_data));
+	a->prev = NULL;
+	a->val = 50;
+	a->index = 0;
+	a->next = malloc(sizeof(t_data));
+	a->next->prev = a;
+	a->next->val = 700;
+	a->next->index = 1;
+	a->next->next = malloc(sizeof(t_data));
+	a->next->next->prev = a->next;
+	a->next->next->val = 25;
+	a->next->next->index = 2;
+	a->next->next->next = NULL;
+
+	t_data *cur;
+	t_data *curb;
+	cur = a;
+	curb = b;
+	while (cur)
+	{
+		printf("A:\n%i:\nprev:\t%p\ncur:\t%p\nnext:\t%p\n", cur->index, cur->prev, cur, cur->next);
+		cur = cur->next;
+	}
+	while (curb)
+	{
+		printf("B:\n%i:\nprev:\t%p\ncur:\t%p\nnext:\t%p\n", curb->index, curb->prev, curb, curb->next);
+		curb = curb->next;
+	}
+	pb(&a, &b);
+	pb(&a, &b);
+	pb(&a, &b);
+	pa(&a, &b);
+	pa(&a, &b);
+	pa(&a, &b);
+	pa(&a, &b);
+	printf("\n\n\n");
+	cur = a;
+	curb = b;
+	while (cur)
+	{
+		printf("A:\n%i:\nprev:\t%p\ncur:\t%p\nnext:\t%p\n", cur->index, cur->prev, cur, cur->next);
+		cur = cur->next;
+	}
+	while (curb)
+	{
+		printf("B:\n%i:\nprev:\t%p\ncur:\t%p\nnext:\t%p\n", curb->index, curb->prev, curb, curb->next);
+		curb = curb->next;
+	}
+}

@@ -6,7 +6,7 @@
 /*   By: dvavryn <dvavryn@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/12 13:26:05 by dvavryn           #+#    #+#             */
-/*   Updated: 2025/06/13 15:15:28 by dvavryn          ###   ########.fr       */
+/*   Updated: 2025/06/15 14:48:54 by dvavryn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,25 @@ typedef struct s_data
 
 void	errorcheck(int argc, char **args);
 void	error_exit(void);
+
+// Free
 void	free_arr(char **arr);
-char	**ps_split(char *arg);
+void	free_data(t_data *top);
+
+// DEVELOPING
+int		issorted(t_data *a);
+
+
+// Stack initialization
+t_data	*get_stack(int argc, char **argv);
+
+
+// Operations
+void	swap(t_data **stack);
+void	push(t_data **stack_a, t_data **stack_b);
+void	rotate(t_data **stack);
+void	revrotate(t_data **stack);
+
+
 
 #endif
