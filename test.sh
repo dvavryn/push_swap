@@ -1,5 +1,8 @@
-cc main.c error.c free.c operations.c get_stack.c ex_op.c print.c sort.c ../libft/libft.a -o push_swap -g
+# cc main.c error.c free.c operations.c get_stack.c ex_op.c print.c sort.c ../libft/libft.a -o push_swap -g
 
+make re
+make clean
+clear
 echo "Runnung test.sh"
 echo
 
