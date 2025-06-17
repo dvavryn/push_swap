@@ -6,7 +6,7 @@
 /*   By: dvavryn <dvavryn@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/15 22:02:09 by dvavryn           #+#    #+#             */
-/*   Updated: 2025/06/15 23:36:37 by dvavryn          ###   ########.fr       */
+/*   Updated: 2025/06/17 21:10:09 by dvavryn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,20 +51,22 @@ int	hardcode_sort(t_data **stack_a)
 	a = (*stack_a)->value;
 	b = (*stack_a)->next->value;
 	if (get_size(*stack_a) == 2 && a > b)
-		return (swap_('a', stack_a, NULL), 0);
+		return (swap_('a', stack_a, NULL), free_data(*stack_a), exit(0), 0);
 	c = (*stack_a)->next->next->value;
 	if (a < b && b < c)
-		return (0);
+		return (free_data(*stack_a), exit(0), 0);
 	else if (a < b && b > c && a < c)
-		return (rrotate_('a', stack_a, NULL), swap_('a', stack_a, NULL), 0);
+		return (rrotate_('a', stack_a, NULL), swap_('a', stack_a, NULL),
+			free_data(*stack_a), exit(0), 0);
 	else if (a > b && b < c && a < c)
-		return (swap_('a', stack_a, NULL), 0);
+		return (swap_('a', stack_a, NULL), free_data(*stack_a), exit(0), 0);
 	else if (a < b && b > c && a > c)
-		return (rrotate_('a', stack_a, NULL), 0);
+		return (rrotate_('a', stack_a, NULL), free_data(*stack_a), exit(0), 0);
 	else if (a > b && b < c && a > c)
-		return (rotate_('a', stack_a, NULL), 0);
+		return (rotate_('a', stack_a, NULL), free_data(*stack_a), exit(0), 0);
 	else if (a > b && b > c)
-		return (swap_('a', stack_a, NULL), rrotate_('a', stack_a, NULL), 0);
+		return (swap_('a', stack_a, NULL), rrotate_('a', stack_a, NULL),
+			free_data(*stack_a), exit(0), 0);
 	return (1);
 }
 
@@ -77,7 +79,7 @@ void	sort(t_data *a)
 	b = NULL;
 	push_('b', &a, &b);
 	push_('b', &a, &b);
-	print_data(a, b);
+	// print_data(a, b);
 	return ;
 }
 
