@@ -6,7 +6,7 @@
 /*   By: dvavryn <dvavryn@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/15 22:02:09 by dvavryn           #+#    #+#             */
-/*   Updated: 2025/06/17 21:10:09 by dvavryn          ###   ########.fr       */
+/*   Updated: 2025/06/18 00:12:48 by dvavryn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,36 +70,51 @@ int	hardcode_sort(t_data **stack_a)
 	return (1);
 }
 
-void	sort(t_data *a)
-{
-	t_data	*b;
+// void	sort(t_data *a)
+// {
+// 	t_data	*b;
 
-	if (get_size(a) <= 3)
-		hardcode_sort(&a);
+// 	if (get_size(a) <= 3)
+// 		hardcode_sort(&a);
+// 	b = NULL;
+	
+// 	// print_data(a, b);
+// 	return ;
+// }
+
+int	get_min(t_data *stack)
+{
+	int		min;
+	t_data	*ptr;
+
+	ptr = stack;
+	min = ptr->value;
+	while (ptr->next)
+	{
+		if (ptr->next->value < min)
+			min = ptr->next->value;
+		ptr = ptr->next;
+	}
+	return (min);
+}
+
+void	sort(t_data *a)  // bubblesort
+{
+	t_data *b;
+
 	b = NULL;
-	push_('b', &a, &b);
-	push_('b', &a, &b);
+	// print_data(a, b);
+	while (a)
+	{
+		if (a->value == get_min(a))
+			push_('b', &a, &b);
+		else
+			rotate_('a', &a, &b);
+	}
+	while (b)
+	{
+		push_('a', &a, &b);
+	}
 	// print_data(a, b);
 	return ;
 }
-
-// void	sort(t_data *a)  // bubblesort
-// {
-// 	t_data *b;
-//
-// 	b = NULL;
-// 	print_data(a, b);
-// 	while (a)
-// 	{
-// 		if (a->value == get_min(a))
-// 			push_('b', &a, &b);
-// 		else
-// 			rotate_('a', &a, &b);
-// 	}
-// 	while (b)
-// 	{
-// 		push_('a', &a, &b);
-// 	}
-// 	print_data(a, b);
-// 	return ;
-// }

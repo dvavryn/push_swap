@@ -6,27 +6,27 @@
 /*   By: dvavryn <dvavryn@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/12 14:21:23 by dvavryn           #+#    #+#             */
-/*   Updated: 2025/06/15 23:38:05 by dvavryn          ###   ########.fr       */
+/*   Updated: 2025/06/18 00:12:40 by dvavryn          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	get_min(t_data *stack)
-{
-	int		min;
-	t_data	*ptr;
+// int	get_min(t_data *stack)
+// {
+// 	int		min;
+// 	t_data	*ptr;
 
-	ptr = stack;
-	min = ptr->value;
-	while (ptr->next)
-	{
-		if (ptr->next->value < min)
-			min = ptr->next->value;
-		ptr = ptr->next;
-	}
-	return (min);
-}
+// 	ptr = stack;
+// 	min = ptr->value;
+// 	while (ptr->next)
+// 	{
+// 		if (ptr->next->value < min)
+// 			min = ptr->next->value;
+// 		ptr = ptr->next;
+// 	}
+// 	return (min);
+// }
 
 int	main(int argc, char **argv)
 {

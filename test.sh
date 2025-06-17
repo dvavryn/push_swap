@@ -50,3 +50,28 @@ do
 	done
 	echo
 done
+echo
+echo "Threshold for 100: 700 OP - 100% || 1100 - 80%"
+for ((i=0; i<5; i++))
+do
+	for ((j=0; j<8; j++))
+	do
+		ARG=$(seq -100 100 | gshuf | head -100 |tr '\n' ' ')
+		OUTPUT=$(./push_swap $ARG | wc -l)
+		if [ "$OUTPUT" -lt 700 ]; then printf "\e[32m[100%%]\e[0m "; elif [ "$OUTPUT" -lt 1100 ]; then printf "\e[33m[80%%]\e[0m "; else printf "\e[31m[KO]\e[0m "; fi
+	done
+	echo
+done
+echo
+echo "Threshold for 500: 5500 OP - 100% || 8500 - 80%"
+for ((i=0; i<5; i++))
+do
+	for ((j=0; j<8; j++))
+	do
+		ARG=$(seq -500 500 | gshuf | head -500 |tr '\n' ' ')
+		OUTPUT=$(./push_swap $ARG | wc -l)
+		OUTPUT=7000
+		if [ "$OUTPUT" -lt 5500 ]; then printf "\e[32m[100%%]\e[0m "; elif [ "$OUTPUT" -lt 8500 ]; then printf "\e[33m[80%%]\e[0m "; else printf "\e[31m[KO]\e[0m "; fi
+	done
+	echo
+done
