@@ -70,7 +70,6 @@ do
 	do
 		ARG=$(seq -500 500 | gshuf | head -500 |tr '\n' ' ')
 		OUTPUT=$(./push_swap $ARG | wc -l)
-		OUTPUT=7000
 		if [ "$OUTPUT" -lt 5500 ]; then printf "\e[32m[100%%]\e[0m "; elif [ "$OUTPUT" -lt 8500 ]; then printf "\e[33m[80%%]\e[0m "; else printf "\e[31m[KO]\e[0m "; fi
 	done
 	echo
